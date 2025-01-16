@@ -1,21 +1,12 @@
 class Solution:
     def xorAllNums(self, nums1: List[int], nums2: List[int]) -> int:
+        res=0
 
-        xor1 = 0
-        xor2 = 0
+        if len(nums2)%2 ==1:
+            for n in nums1:
+                res^=n
+        if len(nums1)%2==1:
+            for m in nums2:
+                res^=m
         
-        for num in nums1:
-            xor1 ^= num
-        
-        for num in nums2:
-            xor2 ^= num
-        
-        
-        result = 0
-        if len(nums2) % 2 == 1:
-            result ^= xor1
-        if len(nums1) % 2 == 1:
-            result ^= xor2
-        
-        return result
-        
+        return res
