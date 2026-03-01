@@ -1,13 +1,12 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
-        nums_index={}
+    def twoSum(self, nums, target):
+        seen = {}
 
-        for index,value in enumerate(nums):
-            complement=target-value
-            if complement in nums_index:
-                return [nums_index[complement],index]
-            nums_index[value] = index
-        
-        return []
+        for i, num in enumerate(nums):
+            complement = target - num
+
+            if complement in seen:
+                return [seen[complement], i]
+
+            seen[num] = i
 
